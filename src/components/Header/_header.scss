@@ -1,0 +1,83 @@
+@import '../../base';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: $black-primary;
+  height: 10vh;
+  width: 100%;
+  &__menu {
+    display: none;
+  }
+  &__logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+  }
+  form {
+    display: flex;
+    flex: 0.6;
+    padding: 0.1rem;
+    margin: 0.1rem;
+    border-radius: 3px;
+    border: 1.2px solid;
+    background-color: $black-secondary;
+
+    input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 0.3rem;
+      color: $text-color;
+      font-weight: 500;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      color: $text-color;
+      background: transparent;
+      border: none;
+      padding: 0 1.25rem;
+      &:focus {
+        border: none;
+      }
+    }
+  }
+  &__icons {
+    display: flex;
+    flex: 0.15;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      width: 40px;
+      object-fit: co;
+      margin-left: 5px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .header {
+    padding: 1rem;
+    form {
+      flex: 1;
+    }
+    &__menu {
+      display: block;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    &__logo {
+      display: none;
+    }
+    &__icons > *:not(img) {
+      display: none;
+    }
+  }
+}
