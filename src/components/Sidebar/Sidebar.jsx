@@ -23,29 +23,35 @@ const Sidebar = ({ sidebar, handleToggleSidebar }) => {
       </li>
       <li>
         <MdSubscriptions size={23} />
-        <span>Subscription</span>
+        <span>Subscriptions</span>
       </li>
+
       <li>
         <MdThumbUp size={23} />
-        <span>Liked video</span>
+        <span>Liked Video</span>
       </li>
+
       <li>
         <MdHistory size={23} />
         <span>History</span>
       </li>
+
       <li>
         <MdLibraryBooks size={23} />
         <span>Library</span>
       </li>
       <li>
         <MdSentimentDissatisfied size={23} />
-        <span>I dont know</span>
+        <span>I don't Know</span>
       </li>
+
       <hr />
+
       <li>
         <MdExitToApp size={23} />
         <span>Log Out</span>
       </li>
+
       <hr />
     </nav>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './_categories.scss';
+import './_categoriesBar.scss';
 
 const keywords = [
   'All',
@@ -17,6 +17,9 @@ const keywords = [
   'Scss',
   'Freecodecamp',
   'Traversy Media',
+  'Javascript',
+  'Docker',
+  'Socket.io',
 ];
 
 const CategoriesBar = () => {
