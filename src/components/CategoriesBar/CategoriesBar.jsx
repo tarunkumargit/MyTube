@@ -30,16 +30,20 @@ const CategoriesBar = () => {
   };
 
   return (
-    <div className="categoriesBar">
-      {keywords.map((value, i) => (
-        <span
-          key={i}
-          onClick={() => handleClick(value)}
-          className={activeElement === value ? 'active' : ''}
-        >
-          {value}
-        </span>
-      ))}
+    <div>
+      <hr style={{ marginTop: '0' }} />
+      <div className="categoriesBar">
+        {keywords.map((value, i) => (
+          <span
+            key={i}
+            onClick={() => handleClick(value)}
+            className={activeElement === value ? 'active' : ''}
+          >
+            {value}
+          </span>
+        ))}
+      </div>
+      <hr />
     </div>
   );
 };
