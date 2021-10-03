@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  background-color: $black-primary;
+  background-color: $black-secondary;
   height: 10vh;
   width: 100%;
   &__menu {
@@ -24,7 +24,7 @@
     margin: 0.1rem;
     border-radius: 3px;
     border: 1.2px solid;
-    background-color: $black-secondary;
+    background-color: $black-primary;
 
     input {
       width: 100%;
