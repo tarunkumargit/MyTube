@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import './_app.scss';
 
 // Components
@@ -33,30 +30,37 @@ const Layout = ({ children }) => {
 };
 
 const App = () => {
+  const { accessToken, loading } = useSelector((state) => state.auth);
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!loading && !accessToken) {
+      history.push('/auth');
+    }
+  }, [accessToken, loading, history]);
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Layout>
-            <HomeScreen />
-          </Layout>
-        </Route>
+    <Switch>
+      <Route path="/" exact>
+        <Layout>
+          <HomeScreen />
+        </Layout>
+      </Route>
 
-        <Route path="/auth" exact>
-          <LoginScreen />
-        </Route>
+      <Route path="/auth" exact>
+        <LoginScreen />
+      </Route>
 
-        <Route path="/search" exact>
-          <Layout>
-            <h1>Search details</h1>
-          </Layout>
-        </Route>
+      <Route path="/search" exact>
+        <Layout>
+          <h1>Search details</h1>
+        </Layout>
+      </Route>
 
-        <Route>
-          <Redirect to="/" />
-        </Route>
-      </Switch>
-    </Router>
+      <Route>
+        <Redirect to="/" />
+      </Route>
+    </Switch>
   );
 };
 
