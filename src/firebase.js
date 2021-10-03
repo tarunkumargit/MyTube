@@ -1,5 +1,7 @@
 import firebase from 'firebase/app';
 
+import 'firebase/auth';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDZuhAGZnr2vm0i1m-dQ4L_wlWlK6Ujf_A',
   authDomain: 'yt-mytube.firebaseapp.com',
@@ -10,3 +12,5 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+export default firebase.auth();
