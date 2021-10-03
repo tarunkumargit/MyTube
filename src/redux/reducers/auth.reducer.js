@@ -3,6 +3,7 @@ import {
   LOGIN_FAIL,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
+  LOG_OUT,
 } from '../actionTypes';
 
 const initialState = {
@@ -48,6 +49,14 @@ export const authReducer = (prevState = initialState, action) => {
       return {
         ...prevState,
         user: payload,
+      };
+
+    // When user Log out
+    case LOG_OUT:
+      return {
+        ...prevState,
+        accessToken: null,
+        user: null,
       };
 
     // Default case
