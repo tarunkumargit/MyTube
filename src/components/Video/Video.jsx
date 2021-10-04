@@ -7,6 +7,7 @@ import { AiFillEye } from 'react-icons/ai';
 
 import moment from 'moment';
 import numeral from 'numeral';
+import { useHistory } from 'react-router';
 
 const Video = ({ video }) => {
   const {
@@ -29,6 +30,8 @@ const Video = ({ video }) => {
   const _duration = moment.utc(seconds * 1000).format('mm:ss');
 
   const _videoId = id?.videoId || id;
+
+  const history = useHistory();
 
   // To get videos details
   useEffect(() => {
@@ -65,8 +68,12 @@ const Video = ({ video }) => {
     get_channel_icon();
   }, [channelId]);
 
+  const handleVideoClick = () => {
+    history.push(`/watch/${_videoId}`);
+  };
+
   return (
-    <div className="video">
+    <div className="video" onClick={handleVideoClick}>
       <div className="video__top">
         {/* <img src={medium.url} alt="" /> */}
         <LazyLoadImage src={medium.url} alt="" effect="blur" />
