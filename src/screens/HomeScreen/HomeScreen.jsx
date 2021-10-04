@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import {
@@ -10,7 +10,7 @@ import {
 import './_HomeScreen.scss';
 
 // Components
-import { CategoriesBar, Video } from '../../components';
+import { CategoriesBar, Video, SkeletonVideo } from '../../components';
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,9 @@ const HomeScreen = () => {
     dispatch(getPopularVideos());
   }, [dispatch]);
 
-  const { videos, activeCategory } = useSelector((state) => state.homeVideos);
+  const { videos, activeCategory, loading } = useSelector(
+    (state) => state.homeVideos
+  );
 
   const fetchData = () => {
     if (activeCategory === 'All') {
@@ -36,18 +38,22 @@ const HomeScreen = () => {
         dataLength={videos.length}
         next={fetchData}
         hasMore={true}
-        Loader={
+        loader={
           <div className="spinner-border text-danger d-block mx-auto"></div>
         }
-        style={{ overflowX: 'hidden' }}
+        className="row"
       >
-        <Row style={{ overflowX: 'hidden' }}>
-          {videos.map((video) => (
-            <Col lg={3} md={4} key={video.id}>
-              <Video video={video} />
-            </Col>
-          ))}
-        </Row>
+        {!loading
+          ? videos.map((video) => (
+              <Col lg={3} md={4} key={video.id}>
+                <Video video={video} />
+              </Col>
+            ))
+          : [...Array(20)].map(() => (
+              <Col lg={3} md={4}>
+                <SkeletonVideo />
+              </Col>
+            ))}
       </InfiniteScroll>
     </Container>
   );
