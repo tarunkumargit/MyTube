@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getVideosByCategory } from '../../redux/actions/videos.action';
+import {
+  getPopularVideos,
+  getVideosByCategory,
+} from '../../redux/actions/videos.action';
 import './_categoriesBar.scss';
 
 const keywords = [
   'All',
   'React js',
   'Angular js',
+  'Angular cli',
   'React Native',
   'Algo',
   'Redux',
@@ -22,6 +26,16 @@ const keywords = [
   'Javascript',
   'Docker',
   'Socket.io',
+  'Gatsby',
+  'Next js',
+  'Nuxt js',
+  'Python',
+  'C#',
+  'C++',
+  'Java',
+  'AWS',
+  'API',
+  'Firebase',
 ];
 
 const CategoriesBar = () => {
@@ -31,7 +45,11 @@ const CategoriesBar = () => {
 
   const handleClick = (value) => {
     setActiveElement(value);
-    dispatch(getVideosByCategory(value));
+    if (value === 'All') {
+      dispatch(getPopularVideos());
+    } else {
+      dispatch(getVideosByCategory(value));
+    }
   };
 
   return (

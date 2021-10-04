@@ -67,7 +67,7 @@ const Video = ({ video }) => {
   return (
     <div className="video">
       <div className="video__top">
-        <img src={medium.url} alt="video thumbnail" />
+        <img src={medium.url} alt="" />
         <span>{_duration}</span>
       </div>
 
@@ -86,7 +86,7 @@ const Video = ({ video }) => {
       </div>
 
       <div className="video__channel">
-        <img src={channelIcon?.url} alt="Channel logo" />
+        <img src={channelIcon?.url} alt="" />
         <p>{channelTitle}</p>
       </div>
     </div>

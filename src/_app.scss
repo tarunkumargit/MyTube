@@ -1,8 +1,10 @@
 .app__container {
   display: flex;
-  height: 90vh;
+  // height: 90vh;
+  margin-top: 10vh;
 }
 
 .app__main {
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  overflow-x: hidden;
 }
