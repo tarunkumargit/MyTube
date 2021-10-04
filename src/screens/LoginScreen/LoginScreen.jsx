@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { login } from '../../redux/actions/auth.action';
-import './_LoginScreen.scss';
+import './_loginScreen.scss';
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
