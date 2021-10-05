@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { AiFillEye } from 'react-icons/ai';
 
-import request from '../../api';
 import moment from 'moment';
 import numeral from 'numeral';
 
@@ -10,7 +9,6 @@ import './_videoHorizontal.scss';
 import { Col, Row } from 'react-bootstrap';
 
 const VideoHorizontal = () => {
-  // const [duration, setDuration] = useState(null);
   const seconds = moment.duration('100').asSeconds();
   const _duration = moment.utc(seconds * 1000).format('mm:ss');
 

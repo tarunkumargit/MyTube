@@ -1,3 +1,5 @@
+@import '../../base';
+
 .comments__form {
   img {
     width: 50px;
@@ -19,9 +21,30 @@
     color: #b1bdb4;
     border-radius: 3px;
     text-transform: uppercase;
+    padding: 0.5rem 1rem;
     &:focus {
       border: none;
       outline: none;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .comments__form {
+    .commentbar {
+      flex-direction: column;
+
+      .commentBtn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        button {
+          margin-top: 0.7rem;
+          width: 35%;
+          padding: 0.4rem 0.3rem;
+          font-size: 0.7rem;
+        }
+      }
     }
   }
 }

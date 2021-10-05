@@ -16,13 +16,18 @@ const Comments = () => {
           alt=""
           className="rounded-circle mr-3"
         />
-        <form onSubmit={handleComment} className="d-flex flex-grow-1">
+        <form
+          onSubmit={handleComment}
+          className="d-flex flex-grow-1 commentbar"
+        >
           <input
             type="text"
             className="flex-grow-1"
             placeholder="Add a comment..."
           />
-          <button className="border-0 px-3 py-2">Comment</button>
+          <div className="commentBtn">
+            <button className="border-0">Comment</button>
+          </div>
         </form>
       </div>
       <div className="commenst__list mt-3">
