@@ -11,6 +11,7 @@ import {
   getVideoById,
 } from '../../redux/actions/videos.action';
 import { useSelector } from 'react-redux';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const WatchScreen = () => {
   const { id } = useParams();
@@ -53,12 +54,17 @@ const WatchScreen = () => {
         />
       </Col>
       <Col lg={4}>
-        {!relatedVideosLoading &&
+        {!relatedVideosLoading ? (
           videos
             ?.filter((video) => video.snippet)
             .map((video) => (
               <VideoHorizontal video={video} key={video.id.videoId} />
-            ))}
+            ))
+        ) : (
+          <SkeletonTheme color="#343a40" highlightColor="#3c4147">
+            <Skeleton width="100%" height="130px" count={15} />
+          </SkeletonTheme>
+        )}
       </Col>
     </Row>
   );

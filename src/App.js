@@ -12,6 +12,7 @@ import { Header, Sidebar } from './components';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import WatchScreen from './screens/WatchScreen/WatchScreen';
+import SearchScreen from './screens/SearchScreen/SearchScreen';
 
 const Layout = ({ children }) => {
   const [sidebar, setSidebar] = useState(false);
@@ -52,9 +53,9 @@ const App = () => {
         <LoginScreen />
       </Route>
 
-      <Route path="/search" exact>
+      <Route path="/search/:query" exact>
         <Layout>
-          <h1>Search details</h1>
+          <SearchScreen />
         </Layout>
       </Route>
 

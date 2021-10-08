@@ -10,7 +10,7 @@ import './_videoHorizontal.scss';
 import request from '../../api';
 import { useHistory } from 'react-router';
 
-const VideoHorizontal = ({ video }) => {
+const VideoHorizontal = ({ video, searchScreen }) => {
   const {
     id,
     snippet: {
@@ -23,6 +23,8 @@ const VideoHorizontal = ({ video }) => {
     },
   } = video;
 
+  const isVideo = id.kind === 'youtube#video';
+  const thumbnail = !isVideo && 'videoHorizontal__thumbnail-channel';
   const [views, setViews] = useState(null);
   const [duration, setDuration] = useState(null);
   const [channelIcon, setChannelIcon] = useState(null);
@@ -67,7 +69,9 @@ const VideoHorizontal = ({ video }) => {
 
   const history = useHistory();
   const handleClick = () => {
-    history.push(`/watch/${id.videoId}`);
+    isVideo
+      ? history.push(`/watch/${id.videoId}`)
+      : history.push(`/channel/${id.channelId}`);
   };
 
   return (
@@ -75,29 +79,39 @@ const VideoHorizontal = ({ video }) => {
       className="videoHorizontal m-1 py-2 align-items-center"
       onClick={handleClick}
     >
-      <Col xs={6} md={6} className="videoHorizontal__left">
+      <Col xs={6} md={searchScreen ? 4 : 6} className="videoHorizontal__left">
         <LazyLoadImage
           src={medium.url}
           alt=""
           effect="blur"
-          className="videoHorizontal__thumbnail"
+          className={`videoHorizontal__thumbnail ${thumbnail}`}
           wrapperClassName="videoHorizontal__thumbnail-wrapper"
         />
-        <span className="videoHorizontal__duration">{_duration}</span>
+        {isVideo && (
+          <span className="videoHorizontal__duration">{_duration}</span>
+        )}
       </Col>
 
-      <Col xs={6} md={6} className="videoHorizontal__right p-0">
+      <Col
+        xs={6}
+        md={searchScreen ? 8 : 6}
+        className="videoHorizontal__right p-0"
+      >
         <p className="videoHorizontal__title mb-1">{title}</p>
-        <div className="videoHorizontal__details">
-          <AiFillEye />
-          <span style={{ marginLeft: '5px' }}>
-            {numeral(views).format('0.a')} Views •
-          </span>
-          <span style={{ marginLeft: '5px' }}>
-            {moment(publishedAt).fromNow()}
-          </span>
-        </div>
+        {isVideo && (
+          <div className="videoHorizontal__details">
+            <AiFillEye />
+            <span style={{ marginLeft: '5px' }}>
+              {numeral(views).format('0.a')} Views •
+            </span>
+            <span style={{ marginLeft: '5px' }}>
+              {moment(publishedAt).fromNow()}
+            </span>
+          </div>
+        )}
+        {isVideo && <p className="mt-1">{description}</p>}
         <div className="videoHorizontal__channel d-flex align-items-center my-1">
+          {isVideo && <LazyLoadImage src={channelIcon?.url} effect="blur" />}
           <p className="mb-0">{channelTitle}</p>
         </div>
       </Col>
