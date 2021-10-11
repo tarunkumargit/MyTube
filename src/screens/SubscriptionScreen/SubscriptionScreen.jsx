@@ -4,14 +4,14 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { VideoHorizontal } from '../../components';
-import { getSubscriptionsChannel } from '../../redux/actions/videos.action';
+import { getSubscribedChannels } from '../../redux/actions/videos.action';
 import './_subscription.scss';
 
 const SubscriptionScreen = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getSubscriptionsChannel());
+    dispatch(getSubscribedChannels());
   }, [dispatch]);
 
   const { loading, videos } = useSelector(

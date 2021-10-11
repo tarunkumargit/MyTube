@@ -9,7 +9,7 @@ import moment from 'moment';
 import numeral from 'numeral';
 import { useHistory } from 'react-router';
 
-const Video = ({ video }) => {
+const Video = ({ video, channelScreen }) => {
   const {
     id,
     snippet: {
@@ -19,6 +19,7 @@ const Video = ({ video }) => {
       publishedAt,
       thumbnails: { medium },
     },
+    contentDetails,
   } = video;
 
   // Add generic views in videos
@@ -29,7 +30,7 @@ const Video = ({ video }) => {
   const seconds = moment.duration(duration).asSeconds();
   const _duration = moment.utc(seconds * 1000).format('mm:ss');
 
-  const _videoId = id?.videoId || id;
+  const _videoId = id?.videoId || contentDetails?.videoId || id;
 
   const history = useHistory();
 
@@ -75,7 +76,6 @@ const Video = ({ video }) => {
   return (
     <div className="video" onClick={handleVideoClick}>
       <div className="video__top">
-        {/* <img src={medium.url} alt="" /> */}
         <LazyLoadImage src={medium.url} alt="" effect="blur" />
         <span className="video__top__duration">{_duration}</span>
       </div>
@@ -93,12 +93,12 @@ const Video = ({ video }) => {
           {moment(publishedAt).fromNow()}
         </span>
       </div>
-
-      <div className="video__channel">
-        {/* <img src={channelIcon?.url} alt="" /> */}
-        <LazyLoadImage src={channelIcon?.url} alt="" effect="blur" />
-        <p>{channelTitle}</p>
-      </div>
+      {!channelScreen && (
+        <div className="video__channel">
+          <LazyLoadImage src={channelIcon?.url} alt="" effect="blur" />
+          <p>{channelTitle}</p>
+        </div>
+      )}
     </div>
   );
 };

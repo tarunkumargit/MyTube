@@ -14,6 +14,7 @@ import LoginScreen from './screens/LoginScreen/LoginScreen';
 import WatchScreen from './screens/WatchScreen/WatchScreen';
 import SearchScreen from './screens/SearchScreen/SearchScreen';
 import SubscriptionScreen from './screens/SubscriptionScreen/SubscriptionScreen';
+import ChannelScreen from './screens/ChannelScreen/ChannelScreen';
 
 const Layout = ({ children }) => {
   const [sidebar, setSidebar] = useState(false);
@@ -69,6 +70,12 @@ const App = () => {
       <Route path="/feed/subscriptions" exact>
         <Layout>
           <SubscriptionScreen />
+        </Layout>
+      </Route>
+
+      <Route path="/channel/:channelId" exact>
+        <Layout>
+          <ChannelScreen />
         </Layout>
       </Route>
 
