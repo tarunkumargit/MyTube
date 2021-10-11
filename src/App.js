@@ -13,6 +13,7 @@ import HomeScreen from './screens/HomeScreen/HomeScreen';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import WatchScreen from './screens/WatchScreen/WatchScreen';
 import SearchScreen from './screens/SearchScreen/SearchScreen';
+import SubscriptionScreen from './screens/SubscriptionScreen/SubscriptionScreen';
 
 const Layout = ({ children }) => {
   const [sidebar, setSidebar] = useState(false);
@@ -62,6 +63,12 @@ const App = () => {
       <Route path="/watch/:id" exact>
         <Layout>
           <WatchScreen />
+        </Layout>
+      </Route>
+
+      <Route path="/feed/subscriptions" exact>
+        <Layout>
+          <SubscriptionScreen />
         </Layout>
       </Route>
 
