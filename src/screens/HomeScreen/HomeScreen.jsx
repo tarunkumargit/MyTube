@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './_homeScreen.scss';
 import { Col, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import InfiniteScroll from 'react-infinite-scroll-component';
