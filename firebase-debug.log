@@ -1,0 +1,61 @@
+[debug] [2021-10-12T16:20:46.415Z] ----------------------------------------------------------------------
+[debug] [2021-10-12T16:20:46.418Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tarun\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-10-12T16:20:46.418Z] CLI Version:   9.20.0
+[debug] [2021-10-12T16:20:46.418Z] Platform:      win32
+[debug] [2021-10-12T16:20:46.418Z] Node Version:  v14.17.4
+[debug] [2021-10-12T16:20:46.419Z] Time:          Tue Oct 12 2021 21:50:46 GMT+0530 (India Standard Time)
+[debug] [2021-10-12T16:20:46.420Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-12T16:20:46.430Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-12T16:20:46.430Z] > authorizing via signed-in user (tarunkumar7973@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\code\projects for portfolio\my_tube
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-10-12T16:21:27.127Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-10-12T16:21:28.291Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-10-12T16:21:28.292Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project yt-mytube (youtube clone) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] +  Wrote build/404.html 
+[debug] [2021-10-12T16:22:24.956Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2021-10-12T16:22:25.652Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2021-10-12T16:22:25.652Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"9.1.2","browserURL":"https://www.gstatic.com/firebasejs/9.1.2/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/9.1.2/firebase.tgz"},"live":{"version":"9.1","browserURL":"https://www.gstatic.com/firebasejs/live/9.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/9.1/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/9.1.2/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/9.1.2/firebase-auth/cordova.js","auth/react-native":"https://www.gstatic.com/firebasejs/9.1.2/firebase-auth/react-native.js","functions":"https://www.gstatic.com/firebasejs/9.1.2/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore/lite.js","storage":"https://www.gstatic.com/firebasejs/9.1.2/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/9.1.2/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/9.1.2/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.memory.js"}}
+[info] +  Wrote build/index.html 
+[info] 
+[info] i  Detected a .git folder at E:\code\projects for portfolio\my_tube 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=382786561&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-10-12T16:23:17.385Z] >>> HTTP REQUEST POST https://github.com/login/oauth/access_token  
+ {"client_id":"89cf50f02ac6aaed3484","client_secret":"3330d14abc895d9a74d5f17cd7a00711fa2c5bf0","code":"7242e56eab146be2322a","redirect_uri":"http://localhost:9005","state":"382786561"}
+[debug] [2021-10-12T16:23:17.956Z] <<< HTTP RESPONSE 200 {"server":"GitHub.com","date":"Tue, 12 Oct 2021 16:23:17 GMT","content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","vary":"X-PJAX, X-PJAX-Container, Accept-Encoding, Accept, X-Requested-With","permissions-policy":"interest-cohort=()","etag":"W/\"615647f98a376a1155347d0530b95dc2\"","cache-control":"max-age=0, private, must-revalidate","strict-transport-security":"max-age=31536000; includeSubdomains; preload","x-frame-options":"deny","x-content-type-options":"nosniff","x-xss-protection":"0","referrer-policy":"origin-when-cross-origin, strict-origin-when-cross-origin","expect-ct":"max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"","content-security-policy":"default-src 'none'; base-uri 'self'; block-all-mixed-content; child-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com objects-origin.githubusercontent.com www.githubstatus.com collector.githubapp.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events translator.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src render.githubusercontent.com viewscreen.githubusercontent.com viewscreen-lab.githubusercontent.com; img-src 'self' data: github.githubassets.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com secured-user-images.githubusercontent.com/ *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/","x-github-request-id":"73ED:64F4:1661794:1984B3D:6165B674"}
+[debug] [2021-10-12T16:23:17.974Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2021-10-12T16:23:18.656Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2021-10-12T16:23:18.656Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"tarunkumargit","id":68695106,"node_id":"MDQ6VXNlcjY4Njk1MTA2","avatar_url":"https://avatars.githubusercontent.com/u/68695106?v=4","gravatar_id":"","url":"https://api.github.com/users/tarunkumargit","html_url":"https://github.com/tarunkumargit","followers_url":"https://api.github.com/users/tarunkumargit/followers","following_url":"https://api.github.com/users/tarunkumargit/following{/other_user}","gists_url":"https://api.github.com/users/tarunkumargit/gists{/gist_id}","starred_url":"https://api.github.com/users/tarunkumargit/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tarunkumargit/subscriptions","organizations_url":"https://api.github.com/users/tarunkumargit/orgs","repos_url":"https://api.github.com/users/tarunkumargit/repos","events_url":"https://api.github.com/users/tarunkumargit/events{/privacy}","received_events_url":"https://api.github.com/users/tarunkumargit/received_events","type":"User","site_admin":false,"name":"Tarun Kumar","company":null,"blog":"","location":"Amritsar ,India","email":"tarunkumar7973@gmail.com","hireable":true,"bio":"Learning new stuffs everyday💻👨‍💻\r\n","twitter_username":null,"public_repos":20,"public_gists":0,"followers":1,"following":2,"created_at":"2020-07-23T12:52:58Z","updated_at":"2021-10-07T07:37:03Z","private_gists":0,"total_private_repos":9,"owned_private_repos":8,"disk_usage":150764,"collaborators":1,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as tarunkumargit 
+[info] 
