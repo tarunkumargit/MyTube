@@ -10,16 +10,19 @@
       border-radius: 50%;
     }
   }
+
   button {
+    background-color: #353535;
+    color: #b1bdb4;
+    border-radius: 3px;
     text-transform: uppercase;
-    background-color: red;
-    color: #fff;
     font-size: 1rem;
     padding: 0.6rem;
     border: none;
-  }
-  button:hover {
-    background-color: rgba(255, 0, 0, 0.84);
+    &:focus {
+      border: none;
+      outline: none;
+    }
   }
 }
 

@@ -27,7 +27,11 @@ const ChannelScreen = () => {
     <>
       <div className="px-5 py-2 my-2 d-flex justify-content-between align-items-center channelHeader">
         <div className="d-flex align-items-center">
-          <img src={snippet?.thumbnails?.default?.url} alt="" />
+          <img
+            style={{ borderRadius: '50%' }}
+            src={snippet?.thumbnails?.default?.url}
+            alt=""
+          />
 
           <div className="mx-3 channelHeader__details">
             <h3>{snippet?.title}</h3>
@@ -37,7 +41,7 @@ const ChannelScreen = () => {
           </div>
         </div>
 
-        <button>Subscribe</button>
+        <button>Subscribed</button>
       </div>
 
       <Container>
