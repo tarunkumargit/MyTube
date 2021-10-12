@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { VideoHorizontal } from '../../components';
 import { getSubscribedChannels } from '../../redux/actions/videos.action';
-import './_subscription.scss';
 
 const SubscriptionScreen = () => {
   const dispatch = useDispatch();
