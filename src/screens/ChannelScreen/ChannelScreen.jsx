@@ -8,7 +8,7 @@ import { getChannelDetails } from '../../redux/actions/channel.action';
 import { getVideosByChannel } from '../../redux/actions/videos.action';
 import numeral from 'numeral';
 
-import './_channelScreen.scss';
+import './channelScreen.scss';
 
 const ChannelScreen = () => {
   const { channelId } = useParams();

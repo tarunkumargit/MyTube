@@ -7,6 +7,8 @@ import {
   getVideosByCategory,
 } from '../../redux/actions/videos.action';
 
+import './homeScreen.scss';
+
 // Components
 import { CategoriesBar, Video, SkeletonVideo } from '../../components';
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import './_watchScreen.scss';
+import './watchScreen.scss';
 
 // Components
 import { Comments, VideoHorizontal, VideoMetaData } from '../../components';
